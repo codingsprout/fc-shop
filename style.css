@@ -1,0 +1,224 @@
+:root {
+    --mainTextColor: #ffffff;
+    --darkThemeOuter: #222222; 
+    --topLink: #fffafa;
+    --topLinkHover: #fd5da8;
+    --bodyTextColor: #000000;
+    --sideBarColor:  rgb(178, 24, 111);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-size: 62.5%;
+    box-sizing: border-box;
+}
+
+body {
+    font: 1.6rem Helvetica;
+    margin: 0;
+    height: 100vh;
+}
+
+a {
+    text-decoration: none;
+}
+
+.grid-container {
+    height: 100%;
+    display: grid;
+    grid-template-areas: 
+    "header" 
+    "main" 
+    "footer";
+    grid-template-columns: 1fr;
+    grid-template-rows: 5rem 1fr 5rem;
+}
+
+.header {
+    grid-area: header;
+    display: flex;
+    justify-content: space-between;
+    color: var(--mainTextColor);
+    background-color: var(--darkThemeOuter);
+    padding: 1rem;
+    align-items: center;
+}
+
+.header-link a{
+    display: inline-block;
+    border-radius: 20px;
+    font-weight: 700;
+    font-size: 18px;
+    color: var(--topLink);
+    text-decoration: none;
+    padding: 8px 20px;
+    transition: transform 200ms ease-in-out, opacity 200ms linear;
+}
+
+.header-link a:hover {
+    transform: scale(1.1);
+  opacity: 0.85;
+color: var(--topLinkHover)
+}
+
+.header-link a:focus {
+    transform: scale(1.1);
+  opacity: 0.85;
+color: var(--topLinkHover)
+}
+
+.fc-brand a{
+    color: var(--topLink);
+    font-size: 2.5rem;
+    font-weight: bold;
+}
+
+.main {
+    grid-area: main;
+}
+
+.footer {
+    grid-area: footer;
+    background: var(--darkThemeOuter);
+    color: var(--mainTextColor);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/*Home*/
+
+.members {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.member {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+}
+
+.members li {
+    flex: 0 1 34rem;
+    margin: 1rem;
+    height: 50rem;
+    border-bottom:  .1rem #c0c0c0 solid;
+    list-style-type: none;
+    padding: 0;
+}
+
+.member-image {
+    max-width: 34rem;
+    max-height: 34rem;
+}
+
+.member-name {
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.member-name a{
+    color: var(--bodyTextColor);
+}
+
+.member-name a:hover {
+    color: #dd571c;
+}
+
+.member-title {
+    font-size: 1.2rem;
+}
+
+.member-price {
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.member-rating {
+    margin-bottom: 1rem;
+}
+
+/*side menu (fix later)*/
+
+.fc-brand button {
+    font-size: 3rem;
+    padding: .5rem;
+    background: none;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+
+}
+
+.sidebar {
+    position: fixed;
+    transform: translateX(-30rem);
+    width: 30rem;
+    background: var(--darkThemeOuter);
+    transition: all .5s ease;
+}
+
+.sidebar > h3 {
+    color: var(--mainTextColor);
+    font-size: 24px;
+    line-height: 70px;
+    text-align: center;
+    background: #000;
+}
+
+.sidebar a{
+    display: block;
+    color: var(--mainTextColor);
+    height: 65px;
+    line-height: 65px;
+    padding-left: 30px;
+    width: 100%;
+    border-bottom: 1px solid rgba(255,255,255,.1);
+    border-top: 1px solid rgb(0,0,0);
+    border-left: 5px solid transparent;
+    box-sizing: border-box;
+}
+
+.sidebar a:hover {
+    border-left: 5px solid var(--sideBarColor);
+    color: var(--sideBarColor);
+}
+
+.sidebar a:active {
+    border-left: 5px solid var(--sideBarColor);
+    color: var(--sideBarColor);
+}
+
+.sidebar a span {
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-left: 16px;
+}
+
+.sidebar.open {
+    transform: translateX(0);
+}
+
+.close-button {
+    position: absolute;
+    right: 8px;
+    top: 23px;
+    cursor: pointer;
+    height: 30px;
+    width: 30px;
+    text-align: center;
+    line-height: 30px;
+    color: var(--mainTextColor);
+    font-size: 20px;
+    background: var(--darkThemeOuter);
+    border: 1px solid var(--darkThemeOuter);
+    border-radius: 5px;
+}
